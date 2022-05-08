@@ -17,7 +17,7 @@ from .funcn import *
 from .FastTelethon import download_file, upload_file
 
 async def screenshot(e):
-    await e.edit("`Generating Screenshots...`")
+    await e.edit("`Generating Screenshots...📸`")
     COUNT.append(e.chat_id)
     wah = e.pattern_match.group(1).decode("UTF-8")
     key = decode(wah)
@@ -96,7 +96,7 @@ async def encc(e):
         ees = dt.now()
         ttt = time.time()
         await nn.delete()
-        nnn = await e.client.send_message(e.chat_id, "`Uploading...`")
+        nnn = await e.client.send_message(e.chat_id, "`📤Uploading...📤`")
         with open(out, "rb") as f:
             ok = await upload_file(
                      client=e.client,
@@ -123,7 +123,7 @@ async def encc(e):
         a1 = await info(dl, e)
         a2 = await info(out, e)
         dk = await ds.reply(
-            f"Original Size : {hbs(org)}\nCompressed Size : {hbs(com)}\nCompressed Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nCompressed in {xx}\nUploaded in {xxx}",
+            f"Original Size : {hbs(org)}\n🧸Compressed Size : {hbs(com)}\n🧸Compressed Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nCompressed in {xx}\nUploaded in {xxx}",
             link_preview=False,
         )
         await ds.forward_to(LOG)
@@ -173,7 +173,7 @@ async def sample(e):
             force_document=False,
             thumb=thum,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, xxx, ttt, "uploading..", file=f"{out}")
+                progress(d, t, xxx, ttt, "📤uploading..📤", file=f"{out}")
             ),
             buttons=[
                 [
@@ -211,7 +211,7 @@ async def encod(event):
                 return await event.reply("`This Video File is already Compressed 😑😑.`")
         except BaseException:
             pass
-        xxx = await event.reply("`Downloading...`")
+        xxx = await event.reply("`📥Downloading...📥`")
         """ For Force Subscribe Channel"""
         # pp = []
         # async for x in event.client.iter_participants("put group username"):
@@ -286,7 +286,7 @@ async def encod(event):
         rr = f"encode/{user.id}"
         if not os.path.isdir(rr):
             os.mkdir(rr)
-        bb = kk.replace(f".{aa}", " compressed.mkv")
+        bb = kk.replace(f".{aa}", " compressed.mp4")
         out = f"{rr}/{bb}"
         thum = "thumb.jpg"
         dtime = ts(int((es - s).seconds) * 1000)
@@ -297,7 +297,7 @@ async def encod(event):
         COUNT.remove(user.id)
         await event.client.send_message(
             event.chat_id,
-            f"🐠DOWNLODING COMPLETED!!🐠",
+            f"📥DOWNLODING COMPLETED!!📥",
             buttons=[
                 [
                     Button.inline("GENERATE SAMPLE", data=f"gsmpl{key}"),
@@ -351,7 +351,7 @@ async def customenc(e, key):
                      file=f,
                      name=out,
                      progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                         progress(d, t, nnn, ttt, "uploading..")
+                         progress(d, t, nnn, ttt, "uploading..📥")
                          ),
                      )
         ds = await e.client.send_file(
@@ -376,7 +376,7 @@ async def customenc(e, key):
     a1 = await info(dl, e)
     a2 = await info(out, e)
     dk = await ds.reply(
-        f"Original Size : {hbs(org)}\nCompressed Size : {hbs(com)}\nCompressed Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nCompressed in {xx}\nUploaded in {xxx}",
+        f"Original Size : {hbs(org)}\n🧸Compressed Size : {hbs(com)}\n🧸Compressed Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nCompressed in {xx}\nUploaded in {xxx}",
         link_preview=False,
     )
     await ds.forward_to(LOG)
